@@ -35,16 +35,8 @@ Black-Scholes Formula
 
 The main function used for calculating option prices is:
 
-def black_scholes(S, K, T, r, sigma, option_type='call'):
-    d1 = (np.log(S / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
-    d2 = d1 - sigma * np.sqrt(T)
-    
-    if option_type == 'call':
-        return S * norm.cdf(d1) - K * np.exp(-r * T) * norm.cdf(d2)
-    elif option_type == 'put':
-        return K * np.exp(-r * T) * norm.cdf(-d2) - S * norm.cdf(-d1)
-    else:
-        raise ValueError("Invalid option type. Choose 'call' or 'put'.")
+![image](https://github.com/user-attachments/assets/a8ceed9a-9589-4bea-8ae6-7fcd8618efa1)
+
 
 ## Generating the Surface Plot
 The generate_surface_plot function creates a 3D surface plot for call and put prices over a range of stock prices and volatilities:
